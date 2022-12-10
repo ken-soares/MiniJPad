@@ -1,5 +1,5 @@
 releases/
-bin/
+bin/notepad/*.class
 .settings
 MiniJPad/*.jar
 
