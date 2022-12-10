@@ -2,4 +2,3 @@ releases/
 bin/notepad/*.class
 .settings
 MiniJPad/*.jar
-
