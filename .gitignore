@@ -1,0 +1,5 @@
+./releases/
+./bin/
+.settings
+./*.jar
+
