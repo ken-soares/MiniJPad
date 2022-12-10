@@ -20,3 +20,11 @@ cd MiniJPad/
 chmod +x install.sh
 sudo ./install.sh
 ```
+
+## Development Goals
+
+* [ ] basic color themes
+* [ ] custom configuration file
+* [ ] display line number
+* [ ] python, lua, c, bash syntax highlighting
+* [ ] convert tabs to spaces button
