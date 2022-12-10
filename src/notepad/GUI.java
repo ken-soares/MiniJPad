@@ -34,11 +34,15 @@ public class GUI implements ActionListener {
 	JMenuItem IFont;
 	JMenu menuTabStop;
 	JMenuItem ITab2, ITab4, ITab8;
-
+	
+	// theme menu button
+	JMenuItem IDark;
+	JMenuItem ILight;
 
 	// Buttons functions
 	FileActions file = new FileActions(this);
 	OptionsActions options = new OptionsActions(this);
+	ThemeActions theme = new ThemeActions(this);
 
 	public static void main(String[] args) {
 		new GUI();
@@ -51,6 +55,7 @@ public class GUI implements ActionListener {
 		createMenuBar();
 		createFileMenu();
 		createOptionsMenu();
+		createThemeMenu();
 		window.setVisible(true);
 	}
 
@@ -149,6 +154,18 @@ public class GUI implements ActionListener {
 		menuTabStop.add(ITab8);
 
 	}
+	
+	public void createThemeMenu() {
+		IDark = new JMenuItem("Dark");
+		IDark.addActionListener(this);
+		IDark.setActionCommand("Dark");
+		menuTheme.add(IDark);
+
+		ILight = new JMenuItem("Light");
+		ILight.addActionListener(this);
+		ILight.setActionCommand("Light");
+		menuTheme.add(ILight);
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
@@ -184,6 +201,12 @@ public class GUI implements ActionListener {
 			break;	
 		case "tab2":
 			options.setTabSize(2);
+			break;
+		case "Dark":
+			theme.setDark();
+			break;
+		case "Light":
+			theme.setLight();
 			break;
 		}
 	}
