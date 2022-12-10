@@ -6,7 +6,7 @@ JAVA_VER=$(java -version 2>&1 | sed -n ';s/.* version "\(.*\)\.\(.*\)\..*".*/\1\
 
 function install {
     chmod +x MiniJPad/run.sh
-    cp -r MiniJPad/ /opt/
+    cp -r MiniJPad/ /opt/MiniJPad
     cp MiniJPad.desktop /usr/share/applications/MiniJPad.desktop
     clear
     echo "MiniJPad ver. $version installed successfully"
