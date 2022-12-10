@@ -1,7 +1,7 @@
 package notepad;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Vector;
 
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
@@ -34,7 +34,6 @@ public class GUI implements ActionListener {
 	JMenuItem IFont;
 	JMenu menuTabStop;
 	JMenuItem ITab2, ITab4, ITab8;
-	
 	// theme menu button
 	JMenuItem IDark;
 	JMenuItem ILight;
@@ -78,6 +77,7 @@ public class GUI implements ActionListener {
 
 	public void createMenuBar() {
 		menuBar = new JMenuBar();
+		menuBar.setBorderPainted(false);
 		window.setJMenuBar(menuBar);
 
 		// TODO: see if better implementation possible
@@ -125,6 +125,7 @@ public class GUI implements ActionListener {
 	}
 
 	public void createOptionsMenu() {
+		menuOptions.setBorderPainted(false);
 		IWrap = new JMenuItem("Line Wrap: false");
 		IWrap.addActionListener(this);
 		IWrap.setActionCommand("Wrap");

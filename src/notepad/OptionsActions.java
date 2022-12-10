@@ -36,7 +36,6 @@ public class OptionsActions {
 			System.out.println("[ERROR] The following error occured:" + e);
 		}
 
-		System.out.println(fontName);
 		font = new Font(fontName, Font.PLAIN, fontSize);
 
 		// TODO: save font in config file
