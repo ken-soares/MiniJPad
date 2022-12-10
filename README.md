@@ -10,10 +10,7 @@ This project is still in its early stages, every feature might not be implemente
 ## Installation
 
 ### Windows
-Releases > MiniJPad.jar
-
-running MiniJPad:
-Right click > Open with > Java
+Releases > MiniJPad.exe
 
 ### Linux
 ```bash
