@@ -1,13 +1,15 @@
 # MiniJPad
 
-A Text Editor Written in Java using builtin Swing library.
+## A Text Editor Written in Java using the built-in Swing library
+
+Free and open source Windows notepad upgrade featuring nice options for programming/scripting.
 
 This project is still in its early stages, every feature might not be implemented yet.
 
 ## Requirements
 
 - Java 19 or above (on windows a popup will send you to download link)
-- wget (optional, for Linux cli installation)
+- wget (for Linux cli installation)
 
 ## Installation
 
@@ -27,8 +29,8 @@ sudo ./install.sh
 
 ## Development Goals
 
-* [ ] basic color themes
+* [ ] basic color themes (gruvbox)
 * [ ] custom configuration file
 * [ ] display line number
-* [ ] python, lua, c, bash syntax highlighting
 * [ ] convert tabs to spaces button
+* [ ] ~~python, lua, c, bash syntax highlighting~~ (out of scope for the time being)
