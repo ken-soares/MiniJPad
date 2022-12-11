@@ -4,7 +4,8 @@
 
 Free and open source Windows notepad upgrade featuring nice options for programming/scripting.
 
-![MiniJPad with gruvbox dark](screenshots/dark.png) ![MiniJPad with gruvbox light](screenshots/light.png)
+<img src="screenshots/dark.png" width="400" alt="MiniJPad with gruvbox dark">
+<img src="screenshots/light.png" width="400" alt="MiniJPad with gruvbox light">
 
 This project is still in its early stages, every feature might not be implemented yet.
 
