@@ -29,9 +29,9 @@ sudo ./install.sh
 
 ## Development Goals
 
-* [ ] basic color themes (gruvbox)
-* [ ] custom configuration file
-* [ ] display line number
-* [ ] support for keybindings
-* [ ] convert tabs to spaces button
-* [ ] ~~python, lua, c, bash syntax highlighting~~ (out of scope for the time being)
+- [ ] basic color themes (gruvbox)
+- [x] display line number
+- [ ] custom configuration file
+- [ ] support for keybindings
+- [ ] convert tabs to spaces button
+- [ ] ~~python, lua, c, bash syntax highlighting~~ (out of scope for the time being)

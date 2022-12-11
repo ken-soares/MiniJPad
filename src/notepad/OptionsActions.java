@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 public class OptionsActions {
 
 	GUI gui;
-	Font font;
+	Font font, fontLines;
 
 	public OptionsActions(GUI gui) {
 		this.gui = gui;
@@ -40,6 +40,7 @@ public class OptionsActions {
 
 		// TODO: save font in config file
 		gui.textArea.setFont(font);
+		gui.lines.setFont(font);
 	}
 
 	public void setDefaultFont() {
@@ -48,6 +49,9 @@ public class OptionsActions {
 		String fontName = "Arial";
 		font = new Font(fontName, Font.PLAIN, fontSize);
 		gui.textArea.setFont(font);
+		fontLines = new Font(fontName, Font.BOLD, fontSize);
+		gui.lines.setFont(fontLines);
+
 	}
 	
 	public void setTabSize(int tabSize) {

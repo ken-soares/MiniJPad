@@ -1,7 +1,6 @@
 package notepad;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Vector;
 
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
@@ -10,12 +9,16 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.text.Element;
 
 public class GUI implements ActionListener {
 
 	// Editor UI
 	JFrame window;
 	JTextArea textArea;
+	JTextArea lines;
 	JScrollPane scrollPane;
 	JMenuBar menuBar;
 
@@ -68,9 +71,45 @@ public class GUI implements ActionListener {
 
 	public void createTextArea() {
 		textArea = new JTextArea();
+
+		lines = new JTextArea("1");
+		lines.setEditable(false);
+
+		textArea.getDocument().addDocumentListener(new DocumentListener() {
+
+			public String getText() {
+
+				int caretPosition = textArea.getDocument().getLength();
+				Element root = textArea.getDocument().getDefaultRootElement();
+				String text = "1" + System.getProperty("line.separator");
+
+				for(int i = 2; i < root.getElementIndex(caretPosition) + 2; i++) {
+					 text += i + System.getProperty("line.separator");
+				}
+				return text;
+			}
+
+			@Override
+			public void removeUpdate(DocumentEvent arg0) {
+				lines.setText(getText());
+			}
+			
+			@Override
+			public void insertUpdate(DocumentEvent arg0) {
+				lines.setText(getText());
+			}
+			
+			@Override
+			public void changedUpdate(DocumentEvent arg0) {
+				lines.setText(getText());
+			}
+		});
+
 		options.setDefaultFont();
-		scrollPane = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
+		scrollPane = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
 				JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		
+		scrollPane.setRowHeaderView(lines);
 		scrollPane.setBorder(BorderFactory.createEmptyBorder());
 		window.add(scrollPane);
 	}
