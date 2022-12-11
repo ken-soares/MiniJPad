@@ -35,6 +35,7 @@ public class GUI implements ActionListener {
 	// options menu buttons
 	JMenuItem IWrap;
 	JMenuItem IFont;
+	JMenuItem ISpacesTabs;
 	JMenu menuTabStop;
 	JMenuItem ITab2, ITab4, ITab8;
 	// theme menu button
@@ -59,6 +60,7 @@ public class GUI implements ActionListener {
 		createOptionsMenu();
 		createThemeMenu();
 		window.setVisible(true);
+		options.setTabSize(options.tabSize);
 	}
 
 	public void createWindow() {
@@ -119,8 +121,6 @@ public class GUI implements ActionListener {
 		menuBar.setBorderPainted(false);
 		window.setJMenuBar(menuBar);
 
-		// TODO: see if better implementation possible
-
 		menuFile = new JMenu("File");
 		menuBar.add(menuFile);
 
@@ -175,6 +175,7 @@ public class GUI implements ActionListener {
 		IFont.setActionCommand("Font");
 		menuOptions.add(IFont);
 		
+		
 		menuTabStop = new JMenu("Tab Size");
 		menuOptions.add(menuTabStop);
 
@@ -193,6 +194,10 @@ public class GUI implements ActionListener {
 		ITab8.setActionCommand("tab8");
 		menuTabStop.add(ITab8);
 
+		ISpacesTabs = new JMenuItem("tabs → spaces");
+		ISpacesTabs.addActionListener(this);
+		ISpacesTabs.setActionCommand("SpacesTabs");
+		menuOptions.add(ISpacesTabs);
 	}
 	
 	public void createThemeMenu() {
@@ -241,6 +246,9 @@ public class GUI implements ActionListener {
 			break;	
 		case "tab2":
 			options.setTabSize(2);
+			break;
+		case "SpacesTabs":
+			options.spacesTabs();
 			break;
 		case "Dark":
 			theme.setDark();

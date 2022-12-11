@@ -8,6 +8,7 @@ public class OptionsActions {
 
 	GUI gui;
 	Font font, fontLines;
+	int tabSize = 4; // write this in config
 
 	public OptionsActions(GUI gui) {
 		this.gui = gui;
@@ -56,5 +57,15 @@ public class OptionsActions {
 	
 	public void setTabSize(int tabSize) {
 		gui.textArea.setTabSize(tabSize);
+		this.tabSize = tabSize;
+	}
+	
+	public void spacesTabs() {
+		String text = gui.textArea.getText();
+		String spaces = "";
+		for(int i = 0; i < tabSize; i++) {
+			spaces += " ";
+		}
+		gui.textArea.setText(text.replace("\t", spaces));
 	}
 }

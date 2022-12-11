@@ -36,7 +36,7 @@ sudo ./install.sh
 
 - [x] basic color themes (gruvbox)
 - [x] display line number
-- [ ] convert tabs to spaces button
+- [x] convert tabs to spaces button
 - [ ] support for keybindings
 - [ ] custom configuration file
-- [ ] ~~python, lua, c, bash syntax highlighting~~ (out of scope for the time being)
+- [ ] ~~python syntax highlighting~~ (out of scope for the time being)
