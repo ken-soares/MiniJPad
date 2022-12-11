@@ -1,8 +1,15 @@
 package notepad;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import javax.swing.JOptionPane;
+
 public class EditActions {
 	GUI gui;
 	OptionsActions options;
+	ProcessBuilder processBuilder;
 
 	public EditActions(GUI gui, OptionsActions options) {
 		this.gui = gui;
@@ -15,5 +22,31 @@ public class EditActions {
 			spaces += " ";
 		}
 		gui.textArea.setText(text.replace("\t", spaces));
+	}
+	
+	public void execute() {
+		String file = " " + gui.file.fileAddress + gui.file.filename + " ";
+		String command = JOptionPane.showInputDialog(gui.window, "execute command:", null);
+		command = command.replace(" % ", file);
+		String[] commandList = command.split(" ");
+		processBuilder = new ProcessBuilder(commandList);
+
+		try {
+
+			Process process = processBuilder.start();
+			StringBuilder output = new StringBuilder();
+			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+			String line; 
+			while((line = reader.readLine()) != null) {
+				output.append(line + "\n");
+			}
+
+			System.out.println(output);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
+		
+		// TODO: create a window with JTextArea containing output
 	}
 }

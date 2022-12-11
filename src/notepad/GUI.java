@@ -35,6 +35,7 @@ public class GUI implements ActionListener {
 	
 	//edit menu buttons
 	JMenuItem ISpacesTabs;
+	JMenuItem ISpawn;
 
 	// options menu buttons
 	JMenuItem IWrap;
@@ -170,10 +171,16 @@ public class GUI implements ActionListener {
 	}
 	
 	public void createEditMenu() {
+
 		ISpacesTabs = new JMenuItem("tabs → spaces");
 		ISpacesTabs.addActionListener(this);
 		ISpacesTabs.setActionCommand("SpacesTabs");
 		menuEdit.add(ISpacesTabs);
+		
+		ISpawn = new JMenuItem("execute");
+		ISpawn.addActionListener(this);
+		ISpawn.setActionCommand("execute");
+		menuEdit.add(ISpawn);
 	}
 
 	public void createOptionsMenu() {
@@ -258,6 +265,9 @@ public class GUI implements ActionListener {
 			break;
 		case "SpacesTabs":
 			edit.spacesTabs();
+			break;
+		case "execute":
+			edit.execute();
 			break;
 		case "Dark":
 			theme.setDark();
