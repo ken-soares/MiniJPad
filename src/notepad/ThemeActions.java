@@ -5,7 +5,6 @@ import java.awt.Color;
 public class ThemeActions {
 	
 	// TODO: read from config.json
-	// TODO: add gruvbox light
 	GUI gui;
 	String dark = "#282828";
 	String darker = "#1D2021";
