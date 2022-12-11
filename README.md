@@ -32,5 +32,6 @@ sudo ./install.sh
 * [ ] basic color themes (gruvbox)
 * [ ] custom configuration file
 * [ ] display line number
+* [ ] support for keybindings
 * [ ] convert tabs to spaces button
 * [ ] ~~python, lua, c, bash syntax highlighting~~ (out of scope for the time being)
