@@ -20,9 +20,12 @@ This project is still in its early stages, every feature might not be implemente
 
 ### Windows
 
-Releases > MiniJPad.exe
+Releases > MiniJPad.exe (install openjdk 19 if asked)
 
 ### Linux
+
+Install openjdk 19 from your package manager or from the website and set it as default
+then copy the following commands:
 
 ```bash
 wget https://github.com/ken-soares/MiniJPad/releases/download/test/MiniJPad-0.0.1.tar.gz
