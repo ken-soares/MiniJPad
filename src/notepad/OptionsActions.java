@@ -60,12 +60,4 @@ public class OptionsActions {
 		this.tabSize = tabSize;
 	}
 	
-	public void spacesTabs() {
-		String text = gui.textArea.getText();
-		String spaces = "";
-		for(int i = 0; i < tabSize; i++) {
-			spaces += " ";
-		}
-		gui.textArea.setText(text.replace("\t", spaces));
-	}
 }

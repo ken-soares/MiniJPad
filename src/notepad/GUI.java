@@ -32,19 +32,24 @@ public class GUI implements ActionListener {
 	// file menu buttons
 	JMenuItem IOpen, INew, ISave, ISaveAs, IExit;
 
+	
+	//edit menu buttons
+	JMenuItem ISpacesTabs;
+
 	// options menu buttons
 	JMenuItem IWrap;
 	JMenuItem IFont;
-	JMenuItem ISpacesTabs;
 	JMenu menuTabStop;
 	JMenuItem ITab2, ITab4, ITab8;
 	// theme menu button
 	JMenuItem IDark;
 	JMenuItem ILight;
+	
 
 	// Buttons functions
 	FileActions file = new FileActions(this);
 	OptionsActions options = new OptionsActions(this);
+	EditActions edit = new EditActions(this, options);
 	ThemeActions theme = new ThemeActions(this);
 
 	public static void main(String[] args) {
@@ -57,6 +62,7 @@ public class GUI implements ActionListener {
 		createTextArea();
 		createMenuBar();
 		createFileMenu();
+		createEditMenu();
 		createOptionsMenu();
 		createThemeMenu();
 		window.setVisible(true);
@@ -162,6 +168,13 @@ public class GUI implements ActionListener {
 		menuFile.add(IExit);
 
 	}
+	
+	public void createEditMenu() {
+		ISpacesTabs = new JMenuItem("tabs → spaces");
+		ISpacesTabs.addActionListener(this);
+		ISpacesTabs.setActionCommand("SpacesTabs");
+		menuEdit.add(ISpacesTabs);
+	}
 
 	public void createOptionsMenu() {
 		menuOptions.setBorderPainted(false);
@@ -194,10 +207,6 @@ public class GUI implements ActionListener {
 		ITab8.setActionCommand("tab8");
 		menuTabStop.add(ITab8);
 
-		ISpacesTabs = new JMenuItem("tabs → spaces");
-		ISpacesTabs.addActionListener(this);
-		ISpacesTabs.setActionCommand("SpacesTabs");
-		menuOptions.add(ISpacesTabs);
 	}
 	
 	public void createThemeMenu() {
@@ -248,7 +257,7 @@ public class GUI implements ActionListener {
 			options.setTabSize(2);
 			break;
 		case "SpacesTabs":
-			options.spacesTabs();
+			edit.spacesTabs();
 			break;
 		case "Dark":
 			theme.setDark();

@@ -32,11 +32,13 @@ chmod +x install.sh
 sudo ./install.sh
 ```
 
-## Development Goals
+## Development Goals for 1.0
 
-- [x] basic color themes (gruvbox)
+- [x] basic gruvbox color themes
 - [x] display line number
 - [x] convert tabs to spaces button
+- [ ] support for undo/redo
+- [ ] support for spawning a compile/run process
 - [ ] support for keybindings
 - [ ] custom configuration file
 - [ ] ~~python syntax highlighting~~ (out of scope for the time being)
