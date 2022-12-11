@@ -9,7 +9,8 @@ public class ThemeActions {
 	GUI gui;
 	String dark = "#282828";
 	String darker = "#1D2021";
-	String semiLight = "#EBDDB2";
+	String light = "#EBDDB2";
+	String lighter = "#FBF1C7";
 
 	public ThemeActions(GUI gui) {
 		this.gui = gui;
@@ -17,20 +18,28 @@ public class ThemeActions {
 	
 	public void setDark() {
 		gui.textArea.setBackground(Color.decode(dark));
-		gui.textArea.setForeground(Color.decode(semiLight));
+		gui.textArea.setForeground(Color.decode(light));
 		gui.menuBar.setBackground(Color.decode(darker));
+		gui.lines.setBackground(Color.decode(darker));
+		gui.lines.setForeground(Color.decode(light));
 
-		gui.menuFile.setForeground(Color.decode(semiLight));
-		gui.menuOptions.setForeground(Color.decode(semiLight));
-		gui.menuEdit.setForeground(Color.decode(semiLight));
-		gui.menuTheme.setForeground(Color.decode(semiLight));
+		gui.menuFile.setForeground(Color.decode(light));
+		gui.menuOptions.setForeground(Color.decode(light));
+		gui.menuEdit.setForeground(Color.decode(light));
+		gui.menuTheme.setForeground(Color.decode(light));
 		
 	}
 	
 	public void setLight() {
-		gui.window.getContentPane().setBackground(Color.decode("#FFFFFF"));
-		gui.textArea.setBackground(Color.decode("#FFFFFF"));
-		gui.textArea.setForeground(Color.decode("#000000"));
-
+		gui.textArea.setBackground(Color.decode(lighter));
+		gui.textArea.setForeground(Color.decode(dark));
+		gui.menuBar.setBackground(Color.decode(light));
+		gui.lines.setBackground(Color.decode(light));
+		gui.lines.setForeground(Color.decode(dark));
+		
+		gui.menuFile.setForeground(Color.decode(dark));
+		gui.menuOptions.setForeground(Color.decode(dark));
+		gui.menuEdit.setForeground(Color.decode(dark));
+		gui.menuTheme.setForeground(Color.decode(dark));
 	}
 }

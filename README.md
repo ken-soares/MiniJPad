@@ -29,7 +29,7 @@ sudo ./install.sh
 
 ## Development Goals
 
-- [ ] basic color themes (gruvbox)
+- [x] basic color themes (gruvbox)
 - [x] display line number
 - [ ] custom configuration file
 - [ ] support for keybindings
