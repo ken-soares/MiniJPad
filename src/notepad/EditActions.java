@@ -10,6 +10,8 @@ public class EditActions {
 	GUI gui;
 	OptionsActions options;
 	ProcessBuilder processBuilder;
+	String SavedCommand;
+	OutputArea commandOutput;
 
 	public EditActions(GUI gui, OptionsActions options) {
 		this.gui = gui;
@@ -25,9 +27,30 @@ public class EditActions {
 	}
 	
 	public void execute() {
-		String file = " " + gui.file.fileAddress + gui.file.filename + " ";
-		String command = JOptionPane.showInputDialog(gui.window, "execute command:", null);
-		command = command.replace(" % ", file);
+		String file = gui.file.fileAddress + gui.file.filename;
+		String command;
+		if(SavedCommand != null) {
+			int answer = JOptionPane.showConfirmDialog(gui.window, "Rerun previous command?");
+
+			if(answer == JOptionPane.YES_OPTION) {
+				command = SavedCommand;
+
+			}else if(answer == JOptionPane.CANCEL_OPTION){
+				command = null;
+
+			}else {
+				command = JOptionPane.showInputDialog(gui.window, "execute command:", null);
+				
+			}
+
+		}else {
+				command = JOptionPane.showInputDialog(gui.window, "execute command:", null);
+		}
+		if(command == null) {
+			return;
+		}
+		command = command.replace("%", file);
+		SavedCommand = command;
 		String[] commandList = command.split(" ");
 		processBuilder = new ProcessBuilder(commandList);
 
@@ -41,7 +64,8 @@ public class EditActions {
 				output.append(line + "\n");
 			}
 
-			System.out.println(output);
+			commandOutput = new OutputArea();
+			commandOutput.outputArea.setText(command + "\n" + output.toString());
 
 		} catch (IOException e) {
 			e.printStackTrace();

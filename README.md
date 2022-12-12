@@ -40,8 +40,8 @@ sudo ./install.sh
 - [x] basic gruvbox color themes
 - [x] display line number
 - [x] convert tabs to spaces button
+- [x] support for spawning a compile/run process
 - [ ] support for undo/redo
-- [ ] support for spawning a compile/run process
 - [ ] support for keybindings
 - [ ] custom configuration file
 - [ ] ~~python syntax highlighting~~ (out of scope for the time being)
